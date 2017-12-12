@@ -6,5 +6,5 @@ These notes (in this form) are separated into 3 chapters:
 using standard RooStats tools to extract useful information from the likelihood of a model or a series of models. 
  - [Models:](Models/README.md)channels, shapes and normalisations.
 Construction of Histfactory objects and exporting workspaces. Definition of Histfactory nomenclature (what is a channel, region, etc) Explaination of iterpolation/morphing scheme.
- - [Hypothesis Testing](HypothesisTestings/README.md) 
+ - [Hypothesis Testing](HypothesisTesting/README.md) 
 Deconstructing some standard macros such as runSig.C and AsymtoticsCLs.C also some recomendations for presenting results. 

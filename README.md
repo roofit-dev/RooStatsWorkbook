@@ -2,9 +2,10 @@
 
 These notes (in this form) are separated into 3 chapters:
 
- - [Likelihoods:](Likelihoods/README.md) profiles, intervals and systematics.
-using standard RooStats tools to extract useful information from the likelihood of a model or a series of models. 
- - [Models:](Models/README.md)channels, shapes and normalisations.
-Construction of Histfactory objects and exporting workspaces. Definition of Histfactory nomenclature (what is a channel, region, etc) Explaination of iterpolation/morphing scheme.
- - [Hypothesis Testing](HypothesisTesting/README.md) 
-Deconstructing some standard macros such as runSig.C and AsymtoticsCLs.C also some recomendations for presenting results. 
+ * **Statistics instruction:** Explaining the underlying link between mathematics and experiment.
+ * **Documentation:** To describe the features of the various tools available within the RooFit and RooStats environment
+ * **Recommendations:** A series of *best practices* to describe the procedural formalisms of performing experiments in particle physics.
+ * **Examples:** template analyses that describe the structure of some generic analyses.
+
+### Updates March 2018
+Including notes and exercises from the [https://indico.desy.de/indico/event/19085/](2018 Terascale Statistics School).

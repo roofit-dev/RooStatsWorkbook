@@ -9,4 +9,4 @@ These notes (in this form) are separated into several chapters:
  * **Examples:** template analyses that describe the structure of some generic analyses.
 
 ### Updates March 2018
-Including notes and exercises from the [https://indico.desy.de/indico/event/19085/](2018 Terascale Statistics School).
+Including notes and exercises from the [2018 Terascale Statistics School](https://indico.desy.de/indico/event/19085/).

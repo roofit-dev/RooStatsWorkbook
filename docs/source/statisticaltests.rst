@@ -543,3 +543,86 @@ The introduction of composite hypotheses in Bayesian statistics transforms Bayes
 .. [#] To facilitate the distinction between symbolic constant expressions (a known background) and symbolic parameters (an unknown background) all constant symbols are marked with a tilde: i.e. :math:`\tilde{a}` is constant expression, whereas :math:`a` is a parameter.
 
 .. [#] An notable example of a distribution that has no well-defined mean or variance is the non-relativistic Breit-Wigner distribution.
+
+
+Statistical inference with nuisance parameters
+==============================================
+
+*"Fitting the background"*
+
+In all examples of this course so far, we have only considered ideal experiments, i.e. experiments that have associated systematic uncertainties originating from experimental aspects or theoretical calculations. This section will explore how to modify statistical procedures to account for the presence of parameter associated to systematic uncertainties, whose values are not perfectly known. 
+
+What are systematic uncertainties
+---------------------------------
+
+The label *systematic* uncertainty strictly originates in the domain of the (physics) problem that we are trying to solve, it is not a concept in statistical modelling. In practice, a systematic uncertainty arises when there effect whose precise shape and magnitude is not know affects our measurement, hence we need to have some estimate of it. A common approach is that we aim capture the unknown effect in one or more model parameters, whose values we then consider the not perfectly known. A good example is a detector calibration uncertainty that affects an invariant mass measurement. If the assumed calibration in the statistical analysis is different from the true (but known) calibration of the detector the measurement will be off my some amount. In most cases some information is available on the unknown calibration constant, in the form of a calibration measurement with an associated uncertainty "the energy scale of reconstructed jets has a 5\% uncertainty". An example of a systematic uncertainty arising from theory is a cross-section uncertainty on a background process in a counting experiment. In both these cases the goal is propagate the effect of the uncertainty on the parameter associated with the theoretical uncertainty to the measurement of the parameter of interest. In the discussion of systematic uncertainties there are hence two distinct aspects that should be distinguished
+
+- Identifying which are the degrees of freedom associated with the conceptual systematic uncertainty, and implement these as model parameters  
+- Account for the presence of these uncertain model parameters in the statistical inference.
+
+The first aspect is a complex subject that is strongly entangled in the physics of the problem that one aims to solve and is discussed in detail in the next section, whereas the second subject is purely on statistical procedure, and is discussed in this section following a simple example likelihood featuring one or more such "nuisance parameters".
+
+**Treatment of nuisance parameters in parameter point and variance estimation**
+
+To illustrate the concept of nuisance parameter treatment in point and variance estimation, we can construct a simple extension of the
+Poisson counting example introduced in Equation X33, by now considering the background that was previously assumed to exactly known, to
+be unknown, and measurement from a second counting experiment that only measures the background\footnote{The experiment is constructed such that the background rate measurement in the control regions is three times the expected background rate in the signal region.}
+
+.. math::
+
+    L(s) = {\rm Poisson}(N|s + \tilde{b}) \to L(s,b) = {\rm Poisson}(N_{SR}|s + b) \cdot {\rm Poisson}(N_{CR}|3 \cdot b)
+
+The likelihood function of Eq. ref PoissonSB can be used to construct a 2-dimensional measurement of both :math:`s` and :math:`b` following
+the procedures outline in Section X, but given that we are now only interested in the signal rate :math:`s` and not in the background rate :math:`b`,
+the goal is to formulate a statement on :math:`s` only, while taking into account the uncertainty on :math:`b`. Figure ref PoissonSB2D shows the
+2-dimensional likelihood function for :math:`L(s,b)` for an observation of :math:`N_{SR}=10, N_{CR}=10`. A likelihood :math:`L(s)` without nuisance parameters
+that assumes :math:`b=5` corresponds to the slice of the plot indicated at the dashed line and will estimate :math:`\hat{s}=5`, where the maximum likelihood
+is found in that slice. A likelihood :math:`L(s,b)` with :math:`b` as a nuisance parameter will instead find the minimum :math:`\hat{b}=3.3,\hat{s}=6.7`, with the
+effect of the nuisance parameter ostensibly taken into account.
+
+The effect of the nuisance parameter :math:`b` on the variance estimate of :math:`s` comes in through the extension of the one-dimensional variance
+estimator into a multidimensional covariance estimator
+
+.. math::
+
+    V(s) = \left( \frac{d^2L}{ds^2}  \right)^{-1} \to V(s,b) = \left(  \begin{matrix} \frac{\partial^2 L}{\partial s^2} & \frac{\partial^2 L}{\partial s \partial b} \\ \frac{\partial^2 L}{\partial b \partial s} & \frac{\partial^2 L}{\partial b^2} \\ \end{matrix} \right)^{-1}  
+
+If the estimators of :math:`s` and :math:`b` are correlated, the off-diagonal elements of the matrix in Eq. ref covariance are non-zero and the
+variance estimates on :math:`s` using :math:`V(s)` and :math:`V(s,b)` will differ. This difference in variance is visualized in Fig \ref covsb that shows
+a contour of :math:`L(s,b)` in the :math:`s,b` plane assuming a Gaussian distribution for a scenario where the estimates of :math:`s,b` are somewhat anti-correlated (left) and uncorrelated (right). The square-root of the variance estimate on :math:`s` using :math:`V(s)` corresponds to the distance between the intersection of the
+the line :math:`b=\hat{b}` with the likelihood contour (red line). The square-root of the variance estimate on :math:`s` using :math:`V(s,b)` corresponds the
+size of the box that encloses the the contour. If the estimators of :math:`s` and :math:`b` are uncorrelated, both methods will return the same variance,
+reflecting that the uncertainty on :math:`b` has no impact on the measurement of :math:`s`.  If on the other had the estimators of :math:`s` and :math:`b` are correlated, 
+the variance estimate from :math:`V(s,b)` will always be larger than the estimate from :math:`V(s)`, reflecting the impact of the uncertainty on :math:`b` on the measurement on :math:`s`. 
+
+**Treatment of nuisance parameters in hypothesis testing and confidence intervals**
+
+The calculation of :math:`p`-values for hypothesis testing in models with a parameter of interest :math:`\mu`, but without nuisance parameters is based on the distribution of the test statistic :math:`p_{\mu} = \int_{t_{\mu,obs}}^{\infty} f(t_{\mu}|\mu) dt_{\mu}`  where :math:`t_\mu` is the test statistic (usually a likelihood ratio), :math:`f(t_\mu|\mu)` is the expected distribution of that test statistic
+and :math:`t_{\mu,obs}` is the observed value of the test statistic. With the introduction of a generic nuisance parameter :math:`\theta`, i.e. :math:`L(\mu) \to L(\mu,\theta)` the distribution of a test statistic based on that likelihood (ratio) will generallly also depend on :math:`\theta`
+
+.. math::
+
+    p_{\mu} = \int_{t_{\mu,obs}}^{\infty} f(t_{\mu}|\mu,\theta) dt_{\mu}, 
+
+and hence the question now is, what value of :math:`\theta` to assume in the distribution of :math:`t_{\mu}`? Fundamentally, we want to reject the hypothesis :math:`\mu` at :math:`\alpha\%` C.L. only if :math:`p_{\mu}<1-\alpha` *for any  value of :math:`\theta`*. In other words, if there is any value of :math:`\theta` for which the data is compatible with hypothesis :math:`\mu` we do not want to reject the hypothesis. This approach appears a priori extremely challenging both technically (performing the calculation for each possible value of :math:`\theta`) also conceptually (one should really consider values of :math:`\theta` that are itself excluded by other measurements), but it turns out that with a clever choice of :math:`t_{\mu}` the statistical problem becomes quite tractable. The key is to replace the likelihood ratio test statistic with the profile likelihood ratio test statistic
+
+.. math::
+
+    t_{\mu} = -2 \log \frac{L(\mu)}{L(\hat{\mu})}  ~~\to~~ \Lambda_\mu = -2 \log \frac{L(\mu,\hat{\hat{\theta}})}{L(\hat{\mu},\hat{\theta})},
+
+where the symbol :math:`\hat{\hat{\mu}}` represents the conditional [#]_ maximum likelihood estimate of :math:`\theta`. Note that the profile likelihood ratio test statistic :math:`\Lambda_{\mu}` does explicitly not depend on the Likelihood parameter :math:`\theta` as both :math:`\hat{\theta}` and :math:`\hat{\hat{\theta}}` are determined by the data. In the limit of large statistics the distribution of the test statistic :math:`f(\Lambda_{\mu}|\mu_{true},\theta_{true})` follows a :math:`\chi^2` distribution, just like the distribution of :math:`t_{\mu}`. This is nice for two reasons: first it allows us to reuse the formalism developed for the construction of confidence intervals based on :math:`t_{\mu}` to be recycled for :math:`\Lambda_{\mu}` by simply replacing the test statistic. Second it means that  :math:`f(\Lambda_{\mu}|\mu_{true},\theta_{true})` is asymptotically independent of the true value of both :math:`\mu_{true}` and :math:`\theta_{true}` so that the interval based on  :math:`\Lambda_{\mu}` convergence to a proper frequentist interval even in the present of nuisance parameters in the asymptotic limit.
+
+It is instructive to compare the plain likelihood ratio :math:`t_{\mu}` and profile likelihood ratio :math:`\Lambda_{\mu}` for an example model: the distribution
+of an observable :math:`x` that is described by a Gaussian signal and and order-6 Chebychev polynomial background. The corresponding likelihood 
+function has one parameter of interest, the signal strength, and 6 nuisance parameters, the coefficients of the polynomial. Figure ref plrdemo 
+shows the distribution of the plain likelihood ratio (blue, top) and the profile likelihood ratio (red, bottom). As the likelihood model with floating
+nuisance parameters is generally more consistent with the observed data for each assumed value of the signal strength (as the polynomial background
+can be configured to peak or dip in the signal region), the confidence interval of the profile likelihood ratio is wider than that of the plain likelihood
+ratio, reflecting the additional uncertainty introduced on the measurement of the signal strength by the fact that the background shape is not  perfectly 
+known.
+
+Response functions and subsidiary measurements
+==============================================
+*"Sideband fits and systematic uncertainties"*
+
+.. [#] Where the condition is that the POI is fixed at the value :math:`\mu`, rather than allowed to float to the value :math:`\hat{\mu}` in the minimization, as is the case in the minimization of the unconditional estimate :math:`\hat{\theta}`

@@ -14,7 +14,7 @@ This is a demonstration of the ongoing effort to document and improve understand
    :maxdepth: 3
    
    introduction
-   simplehypotheses
+   statisticaltests
 
 For CERN users
 --------------

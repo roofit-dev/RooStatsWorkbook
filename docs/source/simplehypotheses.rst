@@ -1,5 +1,10 @@
-Statistical tests with simple hypotheses for counting data 
-###########################################################
+#################
+Statistical Tests
+#################
+
+simple hypotheses for counting data 
+===================================
+
 
 *"What do we mean with probabilities?*
 
@@ -130,7 +135,7 @@ prior to the experiment defines the prior odds ratio
  O_{\rm prior} = \frac{P(H_{S+B})}{P(H_{B})} = \frac{P(H_{S+B})}{1-P(H_{S+B})} 
 
 The posterior odds ratio is defined as the ratio of posterior probabilities,
-calculated using Eq~\ref{eq:bayes1}, where the denominators cancel in the ratio,
+calculated using Eq ref bayes1, where the denominators cancel in the ratio,
 
 .. math::
 
@@ -177,3 +182,146 @@ while highlighting salient differences with Bayesian techniques
 when applicable.
 
 .. [#] which of course will depend on details of the event selection criteria
+
+
+
+simple hypotheses for distributions}
+====================================
+
+*"p-values"*
+
+Most particle physics analyses are not simple counting experiments,
+but study one or more observable distributions that allow to discriminate
+signal and background.
+
+Probability models for distributions
+------------------------------------
+
+To deal with distribution in statistic inferences, we must first
+construct a probability model for distributions. In some cases, the
+distributions for observable quantities can be derived from the
+physics theory from first principles, resulting in analytically
+formulated distributions.  In most cases in todays experiments, and in
+particular at the LHC, predicted distributions for observable
+quantities are derived from a chain of physics and detector
+simulations. The output of such simulations is histogram of simulated
+in events in the observable quantity. An example of such an MC simulation
+prodiction for a fictious signal and background process is shown 
+in Figures binnedPdf. 
+
+While the histograms with simulated signal and background events effectively
+describe a distribution, the statistical model for such a binned distribution
+is effectively a series of counting experiments that can be described with
+a Poisson distribution for each bin
+
+.. math::
+
+   L(\vec{N}|H_{B}) &=& \prod_{i} {\rm Poisson}(N_i|\tilde{b}_i) \label{eq:La}
+
+   L(\vec{N}|H_{S+B}) &=& \prod_{i} {\rm Poisson}(N_i|\tilde{s}_i+\tilde{b}_i) \label{eq:Lb},
+
+where :math:`\tilde{b}_i` and :math:`\tilde{s}_i` are the predicted event counts
+for the background and signal process in bin :math:`i` respectively.
+
+Statistical inferences with probability models for distributions
+----------------------------------------------------------------
+
+How does the fact that observation is a distribution change
+statistical inference?  In the Bayesian paradigm, the likelihoods of
+Eq ref La, ref Lb can simply be plugged into
+Eq ref bayes2, and all further statistical inference procedures
+are unchanged. The frequentist calculation of :math:`L(\vec{N}|H_{B})` also
+remains unchanged, but raises the question if the probability of the
+observed data is still relevant when drawing conclusions on the
+hypotheses considered: :math:`L(\vec{N}|H_{B})` is the probability to
+observe *the precise (binned) distribution of data that was
+recorded*. That is usually not what we are interested in. We are
+interested in the probability to observe this, or any 'similar'
+dataset, e.g. with a few statistical fluctuations w.r.t to the
+observed data that correspond to the same signal event count, or larger. 
+To introduce a precise, unambiguous notion, of what 'more
+signal' (or more generically 'more extreme' in any sense) means in the
+context of statistical inference, a *test statistic* is introduced
+in frequentist inference.
+
+Ordering results by extremity, test statistics and p-values
+-----------------------------------------------------------
+
+A test statistic is, generically speaking, *any* function :math:`T(x)`
+of the observable data :math:`x`.  The goal of a test statistic is that it
+orders all possible observations :math:`x` by extremity: :math:`T(x)>T(x')` means
+that the observation :math:`x` is more extreme than observation :math:`x'`.
+For example, for a Poisson counting experiment, the trivial choice :math:`T(x)=x`
+defines a useful test statistic that orders all possible observation
+by extremity as more observed events means more signal for a counting experiment.
+With the notion of ordering possible outcomes by extremity, comes the
+concept of :math:`p`-values. A :math:`p`-value is the probability to obtain the
+observed data, *or more extreme*, in future repeated experiments.
+For example, for the probability to observe 7 counts or more
+for a Poisson counting experiment with the background hypothesis of the previous example (:math:`\mu=3`)  is
+
+.. math::
+
+   p(H_{B})= \sum_{N=7}^{\infty} {\rm Poisson}(N|\mu=3) = 0.23
+
+A :math:`p`-value is always specific to the hypothesis under which
+it is evaluated.  When no specification is given, it usually refers
+the to null-hypothesis, which is for discovery-style analyses the
+background-only hypothesis.
+
+When the observed data is a distribution, rather than event count, the
+choice of :math:`T(x)=x` will no longer work.  We need a test statisticl to
+quantity if one (multi-dimensional) histogram of observed data
+:math:`\vec{N}` is more extreme than another one. A useful test statistic
+for distribution is the likelihood ratio test statistic
+
+.. math::
+
+   \lambda(\vec{N})=\frac{L(\vec{N}|H_{S+B})}{L(\vec{N}|H_{B})}
+
+One can intuitively see that :math:`\lambda(\vec{N})` orders datasets
+according to signal extremity: For a dataset :math:`N_S` that is very signal-like
+:math:`L(\vec{N_S}|H_{S+B})` will be large, since the data is probable under this hypothesis,
+and :math:`\vec{N_S}|H_{B})` will be small, since the data is improbable under this hypothesis,
+hence the ratio will be large. Conversely for a dataset :math:`N_B` that is very background-like
+:math:`L(\vec{N_B}|H_{S+B})` will be small, since the data is probable under this hypothesis,
+and :math:`L({\vec{N_B}}|H_{B})` will be large, since the data is improbable under this hypothesis,
+hence the ratio will be large. 
+
+With a likelihood-ratio test statistic, frequentist :math:`p`-values can be
+calculated for observable data distributions or arbitrary complexity as the test
+statistic :math:`T(\vec{x})` maps *any* dataset :math:`x` into a single number :math:`T(x)`,
+reducing the :math:`p`-value calculation to an integral over the expected test statistic
+distribution under a given hypothesis
+
+.. math::
+
+   p = \int_{T(\vec{x})_{\rm obs})}^{\infty} f(T|H_{i}) dT
+
+where :math:`f(T|H_{i})` is the expected distribution of values of the test statistic :math:`T`
+under the hypothesis :math:`H_i`. Note that the Poisson example of Eq ref poisT follows from
+the general form of Eq ref Tdist with the choice :math:`T(N)=N` and :math:`H_i = {\rm Poisson}(\mu=3)`,
+where integration was replaced with a summation because of the integer nature :math:`T(N)=N`.
+Figure ref tsdist illustrates the concept of the distribution of the test statistic and its relation
+to the definition of the p-value.
+
+A practical complication in the calculation of :math:`p`-values for
+distribution is that, unlike the Poisson example with :math:`T(x)=x` where
+distribution of :math:`T(x)` is known because it simply the Poisson
+distribution of :math:`x` itself, the distribution :math:`f(T|H_i)` is generally
+*not* known. A simple, but but computionally expensive solution is
+the estimate the distribution :math:`f(T|H_i)` from toy Monte Carlo
+simulation: a histogram of the :math:`T(x)` values from ensemble of toy
+datasets :math:`x` drawn from the hypothesis :math:`H_i` will approximate the
+distribution :math:`f(T|H_i)`. For certain choices of :math:`T(x)` analytical distributions
+are known under asymptotic conditions, and will be discussed in Section ref composite
+
+While not discussed further in these lecture notes, for situations
+where analytical prescriptions are known for the distribution of
+observable quantities :math:`x`, the concept of a probability model can be
+extended into the concept of a probability density model :math:`f(x)` where
+:math:`\int f(x) dx \equiv 1` and the definite integral :math:`\int_a^b f(x) dx`
+represents the probability to observe an event in the observable range :math:`a<x<b`.
+All of the statistical inference techniques discussion in this section
+can be identically executed using such probability density function instead
+of probability models.

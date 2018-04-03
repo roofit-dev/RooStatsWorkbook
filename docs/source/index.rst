@@ -17,6 +17,7 @@ This is a demonstration of the ongoing effort to document and improve understand
    statisticaltests
    documentation
    recommendations
+   examples
 
 For CERN users
 --------------

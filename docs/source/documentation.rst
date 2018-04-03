@@ -9,7 +9,7 @@ Statistical Modeling with RooFit
 The first step in any statistical method is to specify the statistical model being used to describe the 
 data - schematically :math:`f` (data|parameters). This statistical model can be used to generate pseudo-data (toy
 Monte Carlo) for a specific parameter point and with specific observed data it defines the likelihood
-function :math:`L`(parameters) :math:`\equiv f` (observed data|parameters). A properly defined statistical model can be used 
+function :math:`L` (parameters) :math:`\equiv f` (observed data|parameters). A properly defined statistical model can be used 
 in conjunction with any statistical method; however, several tools (`BAT`, `MCLimit`, `Collie`, `BILL`, etc.)
 provide both the modeling stage and a specific statistical method. The `RooFit` and `RooStats` projects
 are designed to separate these two distinct stages; where RooFit provides the modeling language and

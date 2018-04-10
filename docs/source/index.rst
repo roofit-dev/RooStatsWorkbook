@@ -18,6 +18,9 @@ This is a demonstration of the ongoing effort to document and improve understand
    documentation
    recommendations
    examples
+   FirstPage.ipynb
+   SecondPage.ipynb
+   ThirdPage.ipynb
 
 For CERN users
 --------------

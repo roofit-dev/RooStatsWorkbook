@@ -6,7 +6,7 @@ Profile Likelihood Fits
 -----------------------
 
 What is a 'profile likelihood fit'?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A profile (log) likelihood (PLL) fit is a technique to include (or possibly constrain) systematic uncertainties as part of a likelihood fit. To best understand what a PLL fit does it is instructive to compare this to the 'classical' approach to incorporating systematic uncertainties.
 

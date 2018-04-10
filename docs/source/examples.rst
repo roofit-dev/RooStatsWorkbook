@@ -5,17 +5,8 @@ Analysis-Ready Examples
 HistFactory Analysis 
 ====================
 
-Generate Data
--------------
-
-Optimise Analysis
------------------
-
-cut based analysis
-~~~~~~~~~~~~~~~~~~
-
-Multivariate Analysis
-~~~~~~~~~~~~~~~~~~~~~
+Read Data and Optimise Analysis
+--------------------------------
 
 Prepare Workspace
 -----------------
@@ -27,12 +18,8 @@ Statistical Tests
 HistFitter Analysis
 ===================
 
-
-Generate Data
--------------
-
-Prepare Regions
------------------
+Read Data and Prepare Regions
+------------------------------
 
 Configure HistFitter
 --------------------
@@ -42,19 +29,10 @@ Statistical Tests
 
 
 Combine Harvester (CMS)
-=======================
+======================
 
-Generate Data
--------------
-
-Optimise Analysis
------------------
-
-cut based analysis
-~~~~~~~~~~~~~~~~~~
-
-Multivariate Analysis
-~~~~~~~~~~~~~~~~~~~~~
+Read Data and Optimise Analysis
+-------------------------------
 
 Prepare Data Card
 ------------------

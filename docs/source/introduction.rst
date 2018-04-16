@@ -15,6 +15,10 @@ Overview
 
 All experimental particle physics results start with the formulation of a physics theory.  Examples of such theories are the Standard Model with a Higgs boson, or supersymmetric extensions of the SM. Once a theory of interest is chosen, an experimental measurement procedure is designed that can be used to to test the theory, or to measure one or more parameters of it. In practice this means that we exploit a software chain of physics simulation software, showering Monte Carlo generators, detector simulation software, detector reconstruction and dedicated analysis tools to reduce a preductions of physics theory to a statistical model for one or more effective observables :math:`\vec{x}`.
 
+.. image:: physics-graph.png
+    :align: center
+    :alt: Illustration of the chain of physics and detector simulation that provide the inputs to the statistical analysis of the data.
+
 A statistical model, or probability model, is mathematical function that assigns a probability :math:`p` to every possible observable outcome :math:`\vec{x}` of an experiment, under the assumption that a particular hypothesis is true. Once you have such a statistical model of your experiment, *all physics knowledge has been abstracted into the model* and all further inference on the theory, or its parameters, is purely procedural and uniquely defined given an unambiguous formulation of the type of statement desired [#]_.
 
 These remaining steps, evaluating the statistical model for the observed data and summarizing the outcome of the evaluation in a convenient form for further interpretation, then result in familiar statements like "The cross-section of squark production is less than 0.3 pb:math:`^{-1}` at 95% confidence Level", "The probability to observed this signal, or more extreme, under hypothesis of no Higgs boson is less than :math:`1.5 \cdot 10^{-8}`, or "The top quark mass has been measured to be :math:`172 \pm 0.9` GeV".

@@ -15,7 +15,7 @@ Overview
 
 All experimental particle physics results start with the formulation of a physics theory.  Examples of such theories are the Standard Model with a Higgs boson, or supersymmetric extensions of the SM. Once a theory of interest is chosen, an experimental measurement procedure is designed that can be used to to test the theory, or to measure one or more parameters of it. In practice this means that we exploit a software chain of physics simulation software, showering Monte Carlo generators, detector simulation software, detector reconstruction and dedicated analysis tools to reduce a preductions of physics theory to a statistical model for one or more effective observables :math:`\vec{x}`.
 
-.. image:: physics-graph.png
+.. image:: intro-fig01.png
     :align: center
     :alt: Illustration of the chain of physics and detector simulation that provide the inputs to the statistical analysis of the data.
 

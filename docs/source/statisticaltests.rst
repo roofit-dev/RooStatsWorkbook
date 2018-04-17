@@ -214,6 +214,12 @@ in events in the observable quantity. An example of such an MC simulation
 prodiction for a fictious signal and background process is shown 
 in Figures binnedPdf. 
 
+.. image:: stats-fig02.png
+    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/roofit-dev/RooStatsWorkbook/misc_notebooks/RooFitCompositeModels.ipynb
+    :align: center
+    :alt: Expected binned distribution of an observable x under the signal and signal+background hypothesis, ob- tained from MC simulation
+
+
 While the histograms with simulated signal and background events effectively
 describe a distribution, the statistical model for such a binned distribution
 is effectively a series of counting experiments that can be described with

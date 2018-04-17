@@ -34,7 +34,7 @@ A counting experiment example
 -----------------------------
 
 .. image:: stats-fig01.png
-    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/roofit-dev/RooStatsWorkbook/misc_notebooks/stats-probmodel.ipynb
+    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel.ipynb
     :align: center
     :alt: Poisson distribution :math:`\mu` = 3 and :math:`\mu` = 7.
 
@@ -215,7 +215,7 @@ prodiction for a fictious signal and background process is shown
 in Figures binnedPdf. 
 
 .. image:: stats-fig02.png
-    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/roofit-dev/RooStatsWorkbook/misc_notebooks/RooFitCompositeModels.ipynb
+    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/RooFitCompositeModels.ipynb
     :align: center
     :alt: Expected binned distribution of an observable x under the signal and signal+background hypothesis, ob- tained from MC simulation
 

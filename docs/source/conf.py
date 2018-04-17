@@ -50,8 +50,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'RooStatsWorkbook'
-copyright = u'2018, Vincent Croft, Wouter Verkerke'
-author = u'Vincent Croft, Wouter Verkerke'
+copyright = u'2018, Kyle Cranmer, Vincent Croft, Wouter Verkerke'
+author = u'Kyle Cranmer, Vincent Croft, Wouter Verkerke'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

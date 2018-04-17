@@ -34,7 +34,7 @@ A counting experiment example
 -----------------------------
 
 .. image:: stats-fig01.png
-    :target: https://github.com/roofit-dev/RooStatsWorkbook/blob/master/misc_notebooks/stats-probmodel.ipynb
+    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/roofit-dev/RooStatsWorkbook/blob/master/misc_notebooks/stats-probmodel.ipynb
     :align: center
     :alt: Poisson distribution :math:`\mu` = 3 and :math:`\mu` = 7.
 

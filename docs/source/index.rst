@@ -11,7 +11,7 @@ This is a demonstration of the ongoing effort to document and improve understand
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    
    introduction
    statisticaltests

@@ -28,6 +28,3 @@ is similarly encouraged.
    docs-factoryunbinned
    docs-factorybinned
    docs-histfactory
-
-
-

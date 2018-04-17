@@ -15,6 +15,13 @@ In the case of upper limits we start with the statistical model :math:`f(data | 
 The RooStats tool ``HypoTestInverter`` performs the "hypothesis test inversion" of the Neyman-Construction, and can be configured to use  either ``FrequentistCalculator`` (toy Monte Caro) or ``AsymptoticCalculator`` (asymptotics) to calculate p-values.  The ``FrequentistCalculator`` can use several test statistics, but for upper-limits one uses the ``ProfileLikelihoodRatioTestStat`` to calculate the 1-sided profile-likelihood ratio test statistic :math:`q_\mu`.
 The RooStats tool ``FrequentistCalculator`` implements the fully-frequentist p-value calculation based on toys Monte Carlo with the recommended treatment of global observables and the profile-construction. 
 
+.. toctree::
+   :maxdepth: 1
+
+   docs-plr
+   docs-cls
+   docs-cls_toys
+
 Improvements Needed/Planned
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

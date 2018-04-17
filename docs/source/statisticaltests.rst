@@ -33,6 +33,11 @@ each possible outcome of a counting experiment.
 A counting experiment example
 -----------------------------
 
+.. image:: stats-fig01.png
+    :target: https://github.com/roofit-dev/RooStatsWorkbook/blob/master/misc_notebooks/stats-probmodel.ipynb
+    :align: center
+    :alt: Poisson distribution :math:`\mu` = 3 and :math:`\mu` = 7.
+
 For a given hypothetical physics measurement in which, on average, 3
 background events and 4 signal events are expected, Figure shows the
 Poisson probability distributions for the background-only hypothesis

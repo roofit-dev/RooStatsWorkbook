@@ -45,7 +45,7 @@ Profile Likelihood Example
 
 can be seen here_.
 
-.. _here: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/roofit-dev/RooStatsWorkbook/blob/master/misc_notebooks/ProfileLikelihoodFits.ipynb
+.. _here: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/roofit-dev/RooStatsWorkbook/misc_notebooks/ProfileLikelihoodFits.ipynb
 
 Equivalence of PLL and Classical results - Effect of in-situ constraining
 -------------------------------------------------------------------------

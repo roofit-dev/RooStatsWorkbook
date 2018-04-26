@@ -2,8 +2,16 @@
 Analysis-Ready Examples
 #######################
 
-HistFactory Analysis 
-====================
+RooFit Example with :math:`H\rightarrow\gamma\gamma`
+==============================================
+.. toctree::
+   :maxdepth: 1
+
+   examples-hgg
+
+
+HistFactory Example with :math:`H\rightarrow 4\ell`
+============================================
 
 Read Data and Optimise Analysis
 --------------------------------

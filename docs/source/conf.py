@@ -99,7 +99,7 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_context = {'css_files' : ['_static/custiom.css'],}
+#html_context = {'css_files' : ['_static/custiom.css'],}
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
@@ -170,6 +170,6 @@ texinfo_documents = [
 ]
 
 
-def setup(app):
-    app.add_stylesheet('css/popup.css')
-    app.add_javascript("js/popup.js")
+#def setup(app):
+#    app.add_stylesheet('css/popup.css')
+#    app.add_javascript("js/popup.js")

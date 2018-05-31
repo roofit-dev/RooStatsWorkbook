@@ -1,0 +1,27 @@
+{% extends "!page.html" %}
+
+{% set css_files = css_files + ["_static/custom.css"] %}
+
+{% block footer %}
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+<script>
+ // When the user clicks on <div>, open the popup
+    function myFunction() {
+    var popup1 = document.getElementById("ProbModelPopup");
+    var popup2 = document.getElementById("CompModelPopup");
+    popup1.classList.toggle("show");
+    popup2.classList.toggle("show");
+ }
+</script>
+{% endblock %}

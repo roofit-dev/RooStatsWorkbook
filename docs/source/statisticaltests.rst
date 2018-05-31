@@ -33,10 +33,11 @@ each possible outcome of a counting experiment.
 A counting experiment example
 -----------------------------
 
-.. image:: stats-fig01.png
-    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel.ipynb
-    :align: center
-    :alt: Poisson distribution :math:`\mu` = 3 and :math:`\mu` = 7.
+|stats-probmodel|
+
+.. |stats-probmodel| raw:: html
+
+    <div class="popup" onclick="myFunction()"><img src="https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/docs/source/stats-fig01.png" alt="Poisson distribution :math:`\mu` = 3 and :math:`\mu` = 7."><span class="popuptext" id="ProbModelPopup"><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> C++</a></p><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel_PY.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> pyROOT</a></p></span></div>
 
 For a given hypothetical physics measurement in which, on average, 3
 background events and 4 signal events are expected, Figure shows the
@@ -214,11 +215,11 @@ in events in the observable quantity. An example of such an MC simulation
 prodiction for a fictious signal and background process is shown 
 in Figures binnedPdf. 
 
-.. image:: stats-fig02.png
-    :target: https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/RooFitCompositeModels.ipynb
-    :align: center
-    :alt: Expected binned distribution of an observable x under the signal and signal+background hypothesis, ob- tained from MC simulation
+|composite-model|
 
+.. |composite-model| raw:: html
+
+    <div class="popup" onclick="myFunction()"><img src="https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/docs/source/stats-fig02.png" alt="Expected binned distribution of an observable x under the signal and signal+background hypothesis, ob- tained from MC simulation"><span class="popuptext" id="CompModelPopup"><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/RooFitCompositeModels.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> C++</a></p><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/RooFitCompositeModels_PY.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> pyROOT</a></p></span></div>
 
 While the histograms with simulated signal and background events effectively
 describe a distribution, the statistical model for such a binned distribution
@@ -545,15 +546,15 @@ The modified test statistic :math:`\tilde{t}_{\mu}` will on the other hand consi
 
 Observations of event counts much larger than the background estimate, on the other hand, do not trigger such special handling. Thus the observation of a very large positive event count will exclude :math:`\mu=0` from the confidence interval, and result as usual in a two-side confidence interval :math:`[\mu_{-},\mu_{+}]`, corresponding to a measurement-style result. The point where the transition from a one-sided interval of the from :math:`[0,\mu_{+}]` transitions into a two-sided interval  :math:`[\mu_{-},\mu_{+}]` is automatically determined by the procedure. In the HEP literature the confidence intervals constructed with an ordering rule based on the modified likelihood ratio :math:`\tilde{t}_{\mu}` is usually called the 'modified frequentist procedure', or Feldman-Cousins, and is considered to be a 'unified' procedure as the transition from upper limits to two-sided intervals is automatically determined. As for :math:`t_{\mu}`, asymptotic distributions for the modified test statistic :math:`\tilde{t}_{\mu}` are known, and are discussed in detail in [X].
 
+.. [#] To facilitate the distinction between symbolic constant expressions (a known background) and symbolic parameters (an unknown background) all constant symbols are marked with a tilde: i.e. :math:`\tilde{a}` is constant expression, whereas :math:`a` is a parameter.
+
+.. [#] An notable example of a distribution that has no well-defined mean or variance is the non-relativistic Breit-Wigner distribution.
+
+
 Bayesian credible intervals
 ---------------------------
 
 The introduction of composite hypotheses in Bayesian statistics transforms Bayes theorem from an equation calculating probabilities for hypothesis, into an equation calculating probability densities for model parameters, i.e.
-
-
-.. [#] To facilitate the distinction between symbolic constant expressions (a known background) and symbolic parameters (an unknown background) all constant symbols are marked with a tilde: i.e. :math:`\tilde{a}` is constant expression, whereas :math:`a` is a parameter.
-
-.. [#] An notable example of a distribution that has no well-defined mean or variance is the non-relativistic Breit-Wigner distribution.
 
 
 Statistical inference with nuisance parameters
@@ -637,3 +638,26 @@ Response functions and subsidiary measurements
 *"Sideband fits and systematic uncertainties"*
 
 .. [#] Where the condition is that the POI is fixed at the value :math:`\mu`, rather than allowed to float to the value :math:`\hat{\mu}` in the minimization, as is the case in the minimization of the unconditional estimate :math:`\hat{\theta}`
+
+
+Advanced Topics
+===============
+
+Advanced limit setting
+----------------------
+CLS, different TSs for limit setting, FC-style limits, etc. 
+
+Trial factors/LEE
+-----------------
+
+Hybrid methods
+--------------
+
+MCMC 
+----
+
+Jeffreys priors
+---------------
+
+Likelihood principle
+--------------------

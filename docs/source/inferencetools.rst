@@ -2,6 +2,7 @@
 Tools for Statistical Tests and Inference
 *****************************************
 .. include:: docs-freq1.rst
+.. include:: docs-bayes1.rst
 
 Good Practices
 ==============
@@ -14,8 +15,6 @@ Recommendations for measurements
 --------------------------------
 (as opposed to limits)
 
-.. include:: docs-bayes1.rst
-
 Bayesian misc
 -------------
  - marginalisation tools etc, choice of prior, sampling techniques etc [ Kyles notes? ]
@@ -26,3 +25,8 @@ Tables of systematics
 
 .. include:: docs-diag.rst
 
+Blinding
+========
+
+expected vs observed
+--------------------

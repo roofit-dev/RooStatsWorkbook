@@ -640,11 +640,42 @@ can be configured to peak or dip in the signal region), the confidence interval 
 ratio, reflecting the additional uncertainty introduced on the measurement of the signal strength by the fact that the background shape is not  perfectly 
 known.
 
+.. [#] Where the condition is that the POI is fixed at the value :math:`\mu`, rather than allowed to float to the value :math:`\hat{\mu}` in the minimization, as is the case in the minimization of the unconditional estimate :math:`\hat{\theta}`
+
+
 Response functions and subsidiary measurements
 ==============================================
 *"Sideband fits and systematic uncertainties"*
 
-.. [#] Where the condition is that the POI is fixed at the value :math:`\mu`, rather than allowed to float to the value :math:`\hat{\mu}` in the minimization, as is the case in the minimization of the unconditional estimate :math:`\hat{\theta}`
+
+Morphing
+--------
+
+Barston Beelow
+--------------
+
+including notes on BB-lite
+
+Statistical Inference with Nuisance Parameters
+==============================================
+
+Model Validation of constrained parameters
+------------------------------------------
+
+Binned and Unbinned Models
+==========================
+
+Choice of binning
+-----------------
+
+Use of Unbinned Distributions
+-----------------------------
+
+Joint Measurements
+==================
+
+Combination, Control and Validation Regions
+-------------------------------------------
 
 
 Advanced Topics

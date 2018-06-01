@@ -37,7 +37,7 @@ A counting experiment example
 
 .. |stats-probmodel| raw:: html
 
-    <div class="popup" onclick="myFunction()"><img src="https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/docs/source/stats-fig01.png" alt="Poisson distribution :math:`\mu` = 3 and :math:`\mu` = 7."><span class="popuptext" id="ProbModelPopup"><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> C++</a></p><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel_PY.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> pyROOT</a></p></span></div>
+    <div class="popup" onclick="myFunction()"><figure><img src="https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/docs/source/stats-fig01.png" alt="Poisson distribution :math:`\mu` = 3 and :math:`\mu` = 7."> <figcaption>Fig1. - Poisson distribution &mu; = 3 and &mu; = 7. </figcaption></figure><span class="popuptext" id="ProbModelPopup"><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> C++</a></p><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/stats-probmodel_PY.ipynb"><img src="http://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png"> pyROOT</a></p></span></div>
 
 For a given hypothetical physics measurement in which, on average, 3
 background events and 4 signal events are expected, Figure shows the
@@ -316,6 +316,13 @@ the general form of Eq ref Tdist with the choice :math:`T(N)=N` and :math:`H_i =
 where integration was replaced with a summation because of the integer nature :math:`T(N)=N`.
 Figure ref tsdist illustrates the concept of the distribution of the test statistic and its relation
 to the definition of the p-value.
+
+|stats-pvalue|
+
+.. |stats-pvalue| raw:: html
+
+    <div class="popup" onclick="myFunction()"><figure><img src="https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/docs/source/stats-fig03.png" alt="Illustration of the distribution of a test statistic. The p-value is calculated as the integral of the distribution from the observed value of the test statistic to infinity and corresponds to the probability to observe the recorded signal count, or larger (in the precise sense of the test statistic), in future repeated experiments."> <figcaption>Fig 3. - Illustration of the distribution of a test statistic. The p-value is calculated as the integral of the distribution from the observed value of the test statistic to infinity and corresponds to the probability to observe the recorded signal count, or larger (in the precise sense of the test statistic), in future repeated experiments.</figcaption></figure><span class="popuptext" id="ProbModelPopup"><p><a target="_blank" href="https://cern.ch/swanserver/cgi-bin/go/?projurl=https://raw.githubusercontent.com/roofit-dev/RooStatsWorkbook/master/misc_notebooks/p_value.ipynb"><img src="https://www.pugetsystems.com/pic_disp.php?id=39507&width=200"></a></p></span></div>
+
 
 A practical complication in the calculation of :math:`p`-values for
 distribution is that, unlike the Poisson example with :math:`T(x)=x` where

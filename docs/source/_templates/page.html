@@ -16,14 +16,20 @@
 
 
 <script>
- // When the user clicks on <div>, open the popup
-    function myFunction() {
+ // When the user clicks on <div>, open the popup  
+  function myFunction() {
     var popup1 = document.getElementById("ProbModelPopup");
     var popup2 = document.getElementById("CompModelPopup");
     var popup3 = document.getElementById("PValuePopup");
     popup1.classList.toggle("show");
     popup2.classList.toggle("show");
     popup3.classList.toggle("show");
+ }
+  function newFunction() {
+    var popup4 = document.getElementById("GaussModelPopup");
+    var popup5 = document.getElementById("MeanPopup");
+    popup4.classList.toggle("show");
+    popup5.classList.toggle("show");
  }
 </script>
 {% endblock %}

@@ -2,11 +2,9 @@
 Tools for Model Building and Good Practices
 *******************************************
 
-This section discusses the specific tools for recommended for common statistical tasks. In addition, the document identifies requirements that the tools need to meet regarding documentation, testing, deployment and other current short comings that will become goals/deliverables for the (ATLAS) statistics forum.
+This section discusses the specific tools for recommended for building valid and robust statistical models. The RooFit pacakge is core to data modeling in ROOT. 
 
-The RooFit Philosophy
-=====================
-
+We begin with a discussion of the RooFit philosophy - we want a single language for all measurements: common tools & joint model building (other tools) followed by a description of the RooFit language basics, and the workspace. A series of tools for building & manipulating models built using RooFit as a foundation are described with some links and general usage. Finally a list of good practices are presented regarding issues such as modeling systematics, uncertainties, and model cleaning among others. 
 
 .. include:: docs-roofit1.rst
 .. include:: docs-roofit3.rst

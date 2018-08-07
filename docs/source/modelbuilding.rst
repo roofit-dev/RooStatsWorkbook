@@ -36,3 +36,9 @@ Modeling systematcs - pruning and smoothing
 Modeling systematics - DOF
 --------------------------
 how many DOFs does your conceptual systematic have? [ Guide to PLL ]
+
+Modeling uncertainties with increasing luminosity uncertainty
+-------------------------------------------------------------
+[ FAQ ]
+
+.. include:: modelcomputation.rst
